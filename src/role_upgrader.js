@@ -17,13 +17,6 @@ roles.upgrader.settings = {
     1: 'MWW',
     4: 'W'
   },
-  sufixString: {
-    4: {
-      0: {
-        1: 'H'
-      }
-    }
-  },
   maxLayoutAmount: {
     7: {
       50000: 20,
