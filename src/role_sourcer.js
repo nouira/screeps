@@ -17,11 +17,13 @@ roles.sourcer.settings = {
   param: ['controller.level'],
   prefixString: 'MWC',
   layoutString: {
-    1: 'W',
+    2: 'W',
     3: 'MW',
     5: 'MW'
   },
   amount: {
+    2: [1],
+    3: [1, 1],
     5: [2, 4]
   },
   maxLayoutAmount: {
