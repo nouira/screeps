@@ -15,7 +15,10 @@ roles.sourcer = {};
 
 roles.sourcer.settings = {
   param: ['controller.level'],
-  prefixString: 'MWC',
+  prefixString: {
+    1: 'MW',
+    3: 'MWC'
+  },
   layoutString: {
     2: 'W',
     3: 'MW',
