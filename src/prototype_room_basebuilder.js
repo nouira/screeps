@@ -292,7 +292,7 @@ Room.prototype.buildStructures = function() {
   }
 
   let constructionSites = this.findPropertyFilter(FIND_CONSTRUCTION_SITES, 'structureType', [STRUCTURE_RAMPART, STRUCTURE_WALL], true);
-  if (constructionSites.length > 3) {
+  if (constructionSites.length > 1) {
     //    this.log('basebuilder.setup: Too many construction sites');
     return true;
   }
