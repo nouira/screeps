@@ -27,6 +27,10 @@ roles.reserver.updateSettings = function(room, creep) {
 };
 
 roles.reserver.action = function(creep) {
+  if (config.info.signController && !creep.room.controller.sign) {
+    let returnCode = creep.signController(creep.room.controller, config.info.signText);
+    creep.log(returnCode);
+  }
   if (!creep.memory.routing.targetId) {
     // TODO check when this happens and fix it
     creep.log('creep_reserver.action No targetId !!!!!!!!!!!' + JSON.stringify(creep.memory));
