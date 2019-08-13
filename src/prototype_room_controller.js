@@ -1,7 +1,7 @@
 'use strict';
 
 Room.prototype.buildBase = function() {
-  let resetCounters = function(room) {
+  const resetCounters = function(room) {
     room.memory.controllerLevel.checkPathInterval = 1;
     room.memory.controllerLevel.checkWrongStructureInterval = 1;
     room.memory.controllerLevel.buildStructuresInterval = 1;
@@ -20,7 +20,7 @@ Room.prototype.buildBase = function() {
     this.memory.controllerLevel['setup_level_' + this.controller.level] = Game.time;
   }
 
-  if (this.exectueEveryTicks(this.memory.controllerLevel.checkPathInterval)) {
+  if (this.controller.level > 2 && this.exectueEveryTicks(this.memory.controllerLevel.checkPathInterval)) {
     if (this.checkPath(this)) {
       resetCounters(this);
     } else {
@@ -41,8 +41,8 @@ Room.prototype.buildBase = function() {
 
   // TODO Add build ramparts and walls
 
-  let room = this;
-  let executeTask = function(name) {
+  const room = this;
+  const executeTask = function(name) {
     if (room[name]()) {
       room.memory.controllerLevel[name + 'Interval'] = 1;
     } else {
@@ -75,22 +75,18 @@ Room.prototype.buildBase = function() {
   }
 
   // version: this.memory.position.version is maybe not the best idea
-  if (!this.memory.position || this.memory.position.version != config.layout.version) {
+  if (!this.memory.position || this.memory.position.version !== config.layout.version) {
     this.setup();
   }
 };
 
 Room.prototype.clearRoom = function() {
-  var structures = this.find(FIND_STRUCTURES);
-  for (var structures_i in structures) {
-    structures[structures_i].destroy();
-  }
-  var constructionSites = this.find(FIND_CONSTRUCTION_SITES);
-  for (var constructionSites_i in constructionSites) {
-    constructionSites[constructionSites_i].remove();
-  }
-  var creeps = this.find(FIND_MY_CREEPS);
-  for (var creeps_i in creeps) {
-    creeps[creeps_i].suicide();
-  }
+  const structures = this.find(FIND_STRUCTURES);
+  _.each(structures, (s) => s.destroy());
+
+  const constructionSites = this.find(FIND_CONSTRUCTION_SITES);
+  _.each(constructionSites, (cs) => cs.remove());
+
+  const creeps = this.find(FIND_MY_CREEPS);
+  _.each(creeps, (cs) => cs.suicide());
 };

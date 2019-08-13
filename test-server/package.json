@@ -1,0 +1,17 @@
+{
+  "name": "test-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fix": "0.0.6",
+    "screepsmod-auth": "2.4.6",
+    "screepsmod-mongo": "^2.4.3",
+    "screepsmod-tickrate": "1.0.6"
+  }
+}

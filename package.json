@@ -1,25 +1,30 @@
 {
   "name": "screeps-bot-tooangel",
-  "version": "1.1.15",
+  "version": "1.2.4",
   "description": "",
   "main": "src/main.js",
   "screeps_bot": true,
   "dependencies": {},
   "devDependencies": {
-    "chai": "3.5.0",
-    "grunt": "1.0.1",
-    "grunt-contrib-clean": "1.0.0",
+    "chai": "4.2.0",
+    "eslint-config-google": "0.11.0",
+    "eslint-plugin-screeps": "1.4.0",
+    "grunt": "1.0.3",
+    "grunt-contrib-clean": "2.0.0",
     "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-jshint": "1.1.0",
-    "grunt-contrib-uglify": "2.0.0",
-    "grunt-jsbeautifier": "0.2.13",
-    "grunt-jscs": "3.0.1",
-    "grunt-mocha-test": "0.13.2",
-    "grunt-screeps": "1.2.1",
-    "grunt-sync": "0.6.2",
-    "mocha": "3.2.0",
-    "screeps-profiler": "1.2.1",
-    "uglify-js-harmony": "2.6.2"
+    "grunt-contrib-uglify": "4.0.0",
+    "grunt-eslint": "21.0.0",
+    "grunt-exec": "3.0.0",
+    "grunt-mocha-test": "0.13.3",
+    "grunt-screeps": "1.4.0",
+    "grunt-sync": "0.8.0",
+    "mocha": "5.2.0",
+    "request": "2.88.0",
+    "request-promise-native": "1.0.5",
+    "screeps": "3.2.1",
+    "screeps-api": "1.8.0",
+    "screeps-profiler": "2.0.1",
+    "uglify-js-harmony": "2.7.7"
   },
   "repository": {
     "type": "git",
@@ -31,6 +36,7 @@
     "url": "https://github.com/TooAngel/screeps/issues"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "deploy": "grunt deploy"
   }
 }
